@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("/images/login-image.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.login-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.user-container {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color:transparent; 
+	padding-left: 15%;
+	padding-top: 10%;
+	padding-right: 15%;
+	margin-left:5%;
+	margin-top:1%;
+	margin-bottom:1%;
+	margin-right:5%;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgpa(0,0,0,0.5);
+}
+
+.image-container {
+	height: 50%;
+}
+
+.login-image {
+	padding: 1%;
+	height: 95vh;
+	border-radius: 20px;
+}
+.input-box {
+  width: 250px;
+  padding: 10px;
+  margin: 10px 0;                 /* Top and bottom margin */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: text;                   /* Indicates it's a text field */
+  font-size: 16px;
+}
+.submit-button{
+	height:35px;
+	width:70px;
+	padding:10%;
+	margin-left:40%;
+	align-items: center;
+	background-color: LightBlue;
+}
+td, th {
+	padding: 20px 17px; /* 10px top-bottom, 20px left-right */
+}
