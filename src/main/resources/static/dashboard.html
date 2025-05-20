@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+</head>
+<header class="dashboard-container">
+	<div>
+		<img class="logo" alt="Admin-icon" src="/images/logo.png">
+	</div>
+	<div class="heading-container">
+		<p>Admin Portal Dashboard</p>
+	</div>
+	<div class="user-container">
+		<table>
+			<tr>
+				<td><img class="user-icon" alt="Admin-icon"
+					src="/images/user-icon.png"></td>
+				<td><span id="userName"></span></td>
+				<td><button id="logoutBtn">Logout</button></td>
+			</tr>
+		</table>
+	</div>
+</header>
+<body>
+	<div class="main-container">
+		<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+		<nav class="sidebar-container collapsed" id="sidebar">
+			<div class="menu-item">
+				<a href="#" class="tab-link" onclick="setActive(this, 'loan')">Loan
+					Application</a>
+				<div class="submenu">
+					<a href="#" class="tab-link" onclick="setActive(this, 'newLoan')">→
+						New Loan</a> <a href="#" class="tab-link"
+						onclick="setActive(this, 'loanStatus')">→ Loan Status</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'draft')">Draft
+				Application</a>
+
+			<div class="menu-item">
+				<a href="#" class="tab-link" onclick="setActive(this, 'report')">Report</a>
+				<div class="submenu">
+					<a href="#" class="tab-link"
+						onclick="setActive(this, 'brandDataUpload')">→ Brand Data
+						Upload</a> <a href="#" class="tab-link"
+						onclick="setActive(this, 'anchorDetails')">→ Anchor</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'lead')">Lead</a>
+			<a href="#" class="tab-link" onclick="setActive(this, 'activity')">Activity</a>
+		</nav>
+
+		<div class="content-container">
+			<div id="loan" class="tab-content active">
+				<h3>Loan Application</h3>
+				<p>Welcome to the loan application tab.</p>
+			</div>
+
+			<div id="newLoan" class="tab-content">
+				<h3>New Loan</h3>
+				<p>This is the new loan tab content.</p>
+			</div>
+
+			<div id="loanStatus" class="tab-content">
+				<h3>Loan Status</h3>
+				<p>This is the loan status content.</p>
+			</div>
+
+			<div id="draft" class="tab-content">
+				<h3>Draft Application</h3>
+				<p>This is the draft tab content.</p>
+			</div>
+
+			<div id="report" class="tab-content">
+				<h3>Report</h3>
+				<p>This is the report tab content.</p>
+			</div>
+			<div id="brandDataUpload" class="tab-content">
+				<h3>New Loan</h3>
+				<p>This is the brand data upload tab content.</p>
+			</div>
+
+			<div id="anchorDetails" class="tab-content">
+				<form id="anchorForm">
+					<h3>Organization Details</h3>
+					Organization Name : <input type="text" id="companyName" placeholder="Enter Company Name" required="required" /> 
+					&nbsp;Pan Number : <input type="text" id="panNo" placeholder="Enter Pan Number" required="required" /> 
+					&nbsp;GSTN Number : <input type="text" id="gstnNo" placeholder="Enter Gst Number" required="required" /><br> <br>
+					<!--  <label for="orgType">Organization Type:</label>
+          					<select id="orgType" required>
+            					<option value="">-- choose --</option>
+          					</select> -->
+					&nbsp;Start Date : <input type="date" id="startDate" max="" placeholder="select date" required="required" />
+					&nbsp;Mobile No : <input type="number" id="mobileNo" placeholder="Enter mobileno" required="required" />
+					&nbsp;Email : <input type="text" id="email" placeholder="Enter email" required="required" /><br>
+					<h3>Address Details</h3>
+					&nbsp;Address Line1 : <input type="text" id="addressLine1" placeholder="line 1 " required="required" /> 
+					&nbsp;Address Line2 : <input type="text" id="addressLine2" placeholder="line 2 " required="required" /> 
+					&nbsp;City : <input type="text" id="city" placeholder="Enter City " required="required" />
+					&nbsp;State : <input type="text" id="state" placeholder="Enter State " required="required" /><br> <br> 
+					&nbsp;Pincode : <input type="text" id="pincode" placeholder="Enter Pincode " required="required" /><br><br>
+					<table>
+						<tr>
+							<td><button type="submit">Submit</button></td>
+							<td><button type="button" onclick="resetForm()">Reset</button></td>
+						</tr>
+					</table>
+					<div id="meassage"></div>
+					
+				</form>
+			</div>
+
+			<div id="lead" class="tab-content">
+				<h3>Lead</h3>
+				<p>This is the lead tab content.</p>
+			</div>
+
+			<div id="activity" class="tab-content">
+				<h3>Activity</h3>
+				<p>This is the activity tab content.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/dashboard.js"></script>
+</body>
+</html>
