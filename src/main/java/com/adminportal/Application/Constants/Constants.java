@@ -5,12 +5,22 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.regex.Pattern;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Constants {
+	@Value("${brand.data.upload.template}")
+	public static String Template_File_Path;
 	
 	public static final int Dealer_Org_Type = 1;
 	public static final int Seller_Org_Type = 2;
 	public static final int Brand_Org_Type = 3;
 	public static final int Vendor_Org_Type = 4;
+	
+	public static final int Admin_Role = 101;
+	public static final int Anchor_Role = 105;
+	public static final int Dealer_Role = 106;
+	public static final int Seller_Role = 107;
+	
 	
 	public static boolean isValidDate(String dateStr) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -47,6 +57,6 @@ public class Constants {
     }
 
     public static boolean isValidEmail(String email) {
-    	return Pattern.compile("\"^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$\"").matcher(email).matches();
+    	return email.endsWith("@gmail.com");
     }
 }

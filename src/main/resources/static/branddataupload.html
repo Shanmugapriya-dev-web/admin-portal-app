@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Brand Data Upload</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+	<header class="dashboard-container">
+		<div>
+			<img class="logo" alt="Admin-icon" src="/images/fintech-logo.png">
+		</div>
+		<div class="heading-container">
+			<p>Admin Portal Dashboard</p>
+		</div>
+		<div class="user-container">
+			<table>
+				<tr>
+					<td><img class="user-icon" alt="Admin-icon"
+						src="/images/user.png"></td>
+					<td><span id="userName"></span></td>
+					<td><button id="logoutBtn">Logout</button></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+	<div class="main-container">
+		<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+		<nav class="sidebar-container collapsed" id="sidebar">
+			<div class="menu-item">
+				<a href="/dashboard.html" class="tab-link">Loan Application</a>
+				<div class="submenu">
+					<a href="#" class="tab-link" onclick="setActive(this, 'newLoan')">→
+						New Loan</a> <a href="#" class="tab-link"
+						onclick="setActive(this, 'loanStatus')">→ Loan Status</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'draft')">Draft
+				Application</a>
+
+			<div class="menu-item">
+				<a href="#" class="tab-link" onclick="setActive(this, 'report')">Report</a>
+				<div class="submenu">
+					<a href="#" class="tab-link"
+						onclick="setActive(this, 'brandDataUpload')">→ Brand Data
+						Upload</a> <a href="/anchor.html" class="tab-link">→ Anchor</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'lead')">Lead</a>
+			<a href="#" class="tab-link" onclick="setActive(this, 'activity')">Activity</a>
+		</nav>
+
+		<div id="brandDataUpload" class="tab-content">
+			<h3>Upload Customer Data</h3>
+			<form id="brandDataUploadForm">
+				<label for="orgType">Organization Type:</label> <select id="orgType"
+					required>
+					<option value="">-- choose --</option>
+				</select> <label for="brandList">Brand:</label> <select id="brandList"
+					required>
+					<option value="">-- choose --</option>
+				</select> <label for="file" class="form-label">Upload Excel File
+					(.xls)</label> <input type="file" class="form-control" id="file"
+					name="file" accept=".xls,.xlsx" required>
+				<table>
+					<tr>
+						<td><button type="submit">Upload</button></td>
+						<td>
+							<button type="button" onclick="brandDataUploadTemplate()">template</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div id="table-container" class="table-wrapper">
+				<div class="table-scroll">
+					<table>
+						<!-- your table headers and rows go here -->
+					</table>
+				</div>
+			</div>
+			<div id="message"></div>
+		</div>
+		<footer>
+			<div class="footer-container">
+				<div></div>
+				<div>
+					<span>&copy; FinTech Company. All rights reserved</span>
+				</div>
+				<div>
+					<a href="#"><i class="fab fa-facebook-f"
+						style="margin: 0 10px; color: white;"></i></a> <a href="#"><i
+						class="fab fa-twitter" style="margin: 0 10px; color: white;"></i></a>
+					<a href="#"><i class="fab fa-instagram"
+						style="margin: 0 10px; color: white;"></i></a>
+				</div>
+				<div>
+					<p>
+						<span>Contact</span><br> <span>Address: 7th Floor,
+							#769,</span><br> <span>HAVL HI TECH solutions block,</span><br>
+						<span>Spencer Plaza Mall,</span><br> <span>Chennai,
+							Tamil Nadu 600002</span>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="/js/dashboard.js"></script>
+		<script type="text/javascript" src="/js/brandDataUpload.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anchor</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+	<header class="dashboard-container">
+		<div>
+			<img class="logo" alt="Admin-icon" src="/images/fintech-logo.png">
+		</div>
+		<div class="heading-container">
+			<p>Admin Portal Dashboard</p>
+		</div>
+		<div class="user-container">
+			<table>
+				<tr>
+					<td><img class="user-icon" alt="Admin-icon"
+						src="/images/user.png"></td>
+					<td><span id="userName"></span></td>
+					<td><button id="logoutBtn">Logout</button></td>
+				</tr>
+			</table>
+		</div>
+	</header>
+	<div class="main-container">
+		<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+		<nav class="sidebar-container collapsed" id="sidebar">
+			<div class="menu-item">
+				<a href="/dashboard.html" class="tab-link">Loan Application</a>
+				<div class="submenu">
+					<a href="#" class="tab-link" onclick="setActive(this, 'newLoan')">→
+						New Loan</a> <a href="#" class="tab-link"
+						onclick="setActive(this, 'loanStatus')">→ Loan Status</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'draft')">Draft
+				Application</a>
+
+			<div class="menu-item">
+				<a href="#" class="tab-link" onclick="setActive(this, 'report')">Report</a>
+				<div class="submenu">
+					<a href="/branddataupload.html" class="tab-link">→ Brand Data
+						Upload</a> <a href="#" class="tab-link"
+						onclick="setActive(this, 'anchorDetails')">→ Anchor</a>
+				</div>
+			</div>
+
+			<a href="#" class="tab-link" onclick="setActive(this, 'lead')">Lead</a>
+			<a href="#" class="tab-link" onclick="setActive(this, 'activity')">Activity</a>
+		</nav>
+		<div id="anchorDetails" class="tab-content">
+			<form id="anchorForm">
+				<h3>Organization Details</h3>
+				Organization Name : <input type="text" id="companyName"
+					placeholder="Enter Company Name" required="required" /> &nbsp;Pan
+				Number : <input type="text" id="panNo"
+					placeholder="Enter Pan Number" required="required" /> &nbsp;GSTN
+				Number : <input type="text" id="gstnNo"
+					placeholder="Enter Gst Number" required="required" /><br> <br>
+
+				&nbsp;Start Date : <input type="date" id="startDate" max=""
+					placeholder="select date" required="required" />&nbsp;Person
+				Name : <input type="text" id="name"
+					placeholder="Enter person Number" required="required" /> &nbsp;Mobile No :
+				<input type="number" id="mobileNo" placeholder="Enter mobileno"
+					required="required" /> &nbsp;Email : <input type="text" id="email"
+					placeholder="Enter email" required="required" /><br>
+				<h3>Address Details</h3>
+				&nbsp;Address Line1 : <input type="text" id="addressLine1"
+					placeholder="line 1 " required="required" /> &nbsp;Address Line2 :
+				<input type="text" id="addressLine2" placeholder="line 2 "
+					required="required" /> &nbsp;City : <input type="text" id="city"
+					placeholder="Enter City " required="required" /> &nbsp;State : <input
+					type="text" id="state" placeholder="Enter State "
+					required="required" /><br> <br> &nbsp;Pincode : <input
+					type="text" id="pincode" placeholder="Enter Pincode "
+					required="required" /><br> <br>
+				<table>
+					<tr>
+						<td><button type="submit">Submit</button></td>
+						<td><button type="button" onclick="resetForm()">Reset</button></td>
+					</tr>
+				</table>
+				<div id="message"></div>
+
+			</form>
+		</div>
+
+		<footer>
+			<div class="footer-container">
+				<div></div>
+				<div>
+					<span>&copy; FinTech Company. All rights reserved</span>
+				</div>
+				<div>
+					<a href="#"><i class="fab fa-facebook-f"
+						style="margin: 0 10px; color: white;"></i></a> <a href="#"><i
+						class="fab fa-twitter" style="margin: 0 10px; color: white;"></i></a>
+					<a href="#"><i class="fab fa-instagram"
+						style="margin: 0 10px; color: white;"></i></a>
+				</div>
+				<div>
+					<p>
+						<span>Contact</span><br> <span>Address: 7th Floor,
+							#769,</span><br> <span>HAVL HI TECH solutions block,</span><br>
+						<span>Spencer Plaza Mall,</span><br> <span>Chennai,
+							Tamil Nadu 600002</span>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="/js/dashboard.js"></script>
+		<script type="text/javascript" src="/js/anchor.js"></script>
+</body>
+</html>

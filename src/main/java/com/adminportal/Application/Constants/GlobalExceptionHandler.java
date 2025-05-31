@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.adminportal.Application.model.ApiResponse;
 
@@ -25,5 +26,9 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 
-	// Add more handlers as needed...
+	 @ExceptionHandler(NoResourceFoundException.class)
+	    public ResponseEntity<String> handleNotFound(NoResourceFoundException ex) {
+	        // log or silently ignore
+	        return ResponseEntity.notFound().build();
+	    }
 }

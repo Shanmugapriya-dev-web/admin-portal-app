@@ -27,6 +27,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 	  console.log(data);
 	  if(data.resp!=null){
       sessionStorage.setItem("username", data.resp.userName || userName); // Fallback
+	  sessionStorage.setItem("userId", data.resp.userId);
       messageDiv.textContent = "Login successful!";
       messageDiv.style.color = "green";
       // Optionally redirect after login
